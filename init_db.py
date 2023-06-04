@@ -23,9 +23,17 @@ connection.execute("""
   CREATE TABLE IF NOT EXISTS buggies (
     id                    INTEGER PRIMARY KEY,
     qty_wheels            INTEGER DEFAULT 4,
-    flag_color            VARCHAR(20),
-    flag_color_secondary  VARCHAR(20),
-    flag_pattern          VARCHAR(20)
+    qty_tyres             INTEGER DEFAULT 4,
+    flag_color            VARCHAR(20) DEFAULT "WHITE",
+    flag_color_secondary  VARCHAR(20) DEFAULT "BLACK",
+    flag_pattern          VARCHAR(20) DEFAULT "plain",
+    power_type            VARCHAR(20) DEFAULT "petrol",
+    tyres                 VARCHAR(20) DEFAULT "knobbly",
+    armour                VARCHAR(20) DEFAULT "none",
+    attack                VARCHAR(20) DEFAULT "none",
+    algo                  VARCHAR(20) DEFAULT "steady",
+    special               VARCHAR(20) ,          
+    total_cost            INTEGER DEFAULT 0
   )
 
 """)
@@ -37,7 +45,7 @@ cursor = connection.cursor()
 cursor.execute("SELECT * FROM buggies LIMIT 1")
 rows = cursor.fetchall()
 if len(rows) == 0:
-    cursor.execute("INSERT INTO buggies (qty_wheels) VALUES (4)")
+    cursor.execute("INSERT INTO buggies (qty_wheels, total_cost) VALUES (4, 0)")
     connection.commit()
     print("- Added one 4-wheeled buggy")
 else:

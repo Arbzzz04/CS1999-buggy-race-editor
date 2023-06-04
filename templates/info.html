@@ -1,0 +1,461 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<h1>Buggy Specifications: Values</h1>
+
+<h2>Power type</h2>
+
+<style>
+
+    table {
+      border-collapse: collapse;
+      width: auto;
+      max-width: 100%;
+    }
+  
+    th {
+      background-color: #808080;
+      color: #ffffff;
+    }
+    
+    tr:nth-child(even) {
+      background-color: #f2f2f2;
+    }
+
+    tr:nth-child(odd) {
+      background-color: #ffffff;
+    }
+
+    tr:hover {
+      background-color: #00d9ff;
+    }
+  
+    td, th {
+      padding: 8px;
+      border: 1px solid #dddddd;
+      text-align: left;
+      font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    }
+</style>
+
+<table>
+    <tr>
+        <th>Power type</th>
+        <th>Cost (points)</th>
+        <th>Mass (kg)</th>
+        <th>Is consumable?</th>
+        <th>Description</th>
+    </tr>
+    <tr>
+        <td>bio</td>
+        <td>5</td>
+        <td>2</td>
+        <td>True</td>
+        <td>Bio-fuelled internal combustion engine</td>
+    </tr>
+    <tr>
+        <td>electric</td>
+        <td>20</td>
+        <td>20</td>
+        <td>True</td>
+        <td>Lithium-ion battery</td>
+    </tr>
+    <tr>
+        <td>fusion</td>
+        <td>400</td>
+        <td>100</td>
+        <td>False</td>
+        <td>Fusion reactor</td>
+    </tr>
+    <tr>
+        <td>hamster</td>
+        <td>3</td>
+        <td>1</td>
+        <td>True</td>
+        <td>Hamster</td>
+    </tr>
+    <tr>
+        <td>none</td>
+        <td>0</td>
+        <td>0</td>
+        <td>False</td>
+        <td>No power</td>
+    </tr>
+    <tr>
+        <td>petrol</td>
+        <td>4</td>
+        <td>2</td>
+        <td>True</td>
+        <td>Petroleum-fuelled internal combustion engine</td>
+    </tr>
+    <tr>
+        <td>rocket</td>
+        <td>16</td>
+        <td>2</td>
+        <td>True</td>
+        <td>Rocket fuel</td>
+    </tr>
+    <tr>
+        <td>solar</td>
+        <td>40</td>
+        <td>30</td>
+        <td>False</td>
+        <td>Bank of solar panels</td>
+    </tr>
+    <tr>
+        <td>steam</td>
+        <td>3</td>
+        <td>4</td>
+        <td>True</td>
+        <td>Steam engine</td>
+    </tr>
+    <tr>
+        <td>thermo</td>
+        <td>300</td>
+        <td>100</td>
+        <td>False</td>
+        <td>Thermonuclear reactor</td>
+    </tr>
+    <tr>
+        <td>wind</td>
+        <td>20</td>
+        <td>30</td>
+        <td>False</td>
+        <td>Sailing rig</td>
+    </tr>
+</table>
+
+<h2>Tyres</h2>
+
+<table>
+    <tr>
+        <th>Tyres</th>
+        <th>Cost (points)</th>
+        <th>Mass (kg)</th>
+        <th>Description</th>
+    </tr>
+    <tr>
+        <td>knobbly</td>
+        <td>15</td>
+        <td>20</td>
+        <td>Great for off-roading</td>
+    </tr>
+    <tr>
+        <td>maglev</td>
+        <td>50</td>
+        <td>30</td>
+        <td>You can't get punctures if you don't touch the ground. Frictionless.</td>
+    </tr>
+    <tr>
+        <td>reactive</td>
+        <td>40</td>
+        <td>20</td>
+        <td>Intelligent nanotech swarm rubber restructures itself depending on the conditions</td>
+    </tr>
+    <tr>
+        <td>slick</td>
+        <td>10</td>
+        <td>14</td>
+        <td>Fast choice for roads and rain</td>
+    </tr>
+    <tr>
+        <td>steelband</td>
+        <td>20</td>
+        <td>28</td>
+        <td>Slower but almost impossible to puncture</td>
+    </tr>
+</table>
+
+<h2>Armour</h2>
+
+<table>
+    <tr>
+        <th>Armour</th>
+        <th>Cost (points)</th>
+        <th>Mass (kg)</th>
+        <th>Description</th>
+    </tr>
+    <tr>
+        <td>aluminium</td>
+        <td>200</td>
+        <td>50</td>
+        <td>Fairly strong but light</td>
+    </tr>
+    <tr>
+        <td>none</td>
+        <td>0</td>
+        <td>0</td>
+        <td>Unburdened and unprotected. Ideal for trips to the shops</td>
+    </tr>
+    <tr>
+        <td>thicksteel</td>
+        <td>200</td>
+        <td>400</td>
+        <td>Very strong but very heavy</td>
+    </tr>
+    <tr>
+        <td>thinsteel</td>
+        <td>100</td>
+        <td>200</td>
+        <td>Strong but heavy</td>
+    </tr>
+    <tr>
+        <td>titanium</td>
+        <td>290</td>
+        <td>300</td>
+        <td>The ultimate in plate protection, but pricey</td>
+    </tr>
+    <tr>
+        <td>wood</td>
+        <td>40</td>
+        <td>100</td>
+        <td>Cheap but pragmatic (sustainable forests are used where possible)</td>
+    </tr>
+</table>
+
+<h2>Attack</h2>
+
+<table>
+    <tr>
+        <th>Attack</th>
+        <th>Cost (points)</th>
+        <th>Mass (kg)</th>
+        <th>Description</th>
+    </tr>
+    <tr>
+        <td>biohazard</td>
+        <td>30</td>
+        <td>10</td>
+        <td>A cloud of infectious spores that target hominids and rodents</td>
+    </tr>
+    <tr>
+        <td>charge</td>
+        <td>28</td>
+        <td>25</td>
+        <td>An electric lance like a cattle prod made of lightning</td>
+    </tr>
+    <tr>
+        <td>flame</td>
+        <td>20</td>
+        <td>12</td>
+        <td>A flamethrower that puffs out a ball of fire</td>
+    </tr>
+    <tr>
+        <td>none</td>
+        <td>0</td>
+        <td>0</td>
+        <td>Mostly harmless</td>
+    </tr>
+    <tr>
+        <td>spike</td>
+        <td>5</td>
+        <td>10</td>
+        <td>A metal prong welded onto the superstructure</td>
+    </tr>
+</table>
+
+<h2>Algo</h2>
+
+<table>
+    <tr>
+      <th>Algo</th>
+      <th>Cost (points)</th>
+      <th>Mass (kg)</th>
+      <th>Description</th>
+    </tr>
+    <tr>
+      <td>buggy</td>
+      <td>0</td>
+      <td>0</td>
+      <td>A bad state that occurs when damaged</td>
+    </tr>
+    <tr>
+      <td>defensive</td>
+      <td>0</td>
+      <td>0</td>
+      <td>Always avoids conflict: will attack but only reluctantly</td>
+    </tr>
+    <tr>
+      <td>offensive</td>
+      <td>0</td>
+      <td>0</td>
+      <td>Always seeks to attack (while attacks are available)</td>
+    </tr>
+    <tr>
+      <td>random</td>
+      <td>0</td>
+      <td>0</td>
+      <td>Capriciously defensive, steady, or offensive at different times during the race, based on mood</td>
+    </tr>
+    <tr>
+      <td>steady</td>
+      <td>0</td>
+      <td>0</td>
+      <td>The middle way: doesn't seek out attacks but makes them if opportunities present themselves</td>
+    </tr>
+    <tr>
+      <td>titfortat</td>
+      <td>0</td>
+      <td>0</td>
+      <td>Starts steady, but petulantly switches to offense if attacked</td>
+    </tr>
+</table>
+
+<h2>Flag Pattern</h2>
+
+<table>
+    <tr>
+      <th>Flag pattern</th>
+      <th>Description</th>
+    </tr>
+    <tr>
+      <td>check</td>
+      <td>A chequered grid</td>
+    </tr>
+    <tr>
+      <td>dstripe</td>
+      <td>Diagonal stripes</td>
+    </tr>
+    <tr>
+      <td>hstripe</td>
+      <td>Horizontal stripes</td>
+    </tr>
+    <tr>
+      <td>plain</td>
+      <td>A plain field with no secondary colour</td>
+    </tr>
+    <tr>
+      <td>spot</td>
+      <td>Spotted</td>
+    </tr>
+    <tr>
+      <td>vstripe</td>
+      <td>Vertical stripes</td>
+    </tr>
+</table>
+
+<h2>Special</h2>
+
+<table>
+    <tr>
+      <th>Description</th>
+      <th>Cost (points)</th>
+      <th>Mass (kg)</th>
+    </tr>
+    <tr>
+      <td>Antibiotic</td>
+      <td>90</td>
+      <td>8</td>
+    </tr>
+    <tr>
+      <td>Banging</td>
+      <td>42</td>
+      <td>40</td>
+    </tr>
+    <tr>
+      <td>Fireproof</td>
+      <td>70</td>
+      <td>8</td>
+    </tr>
+    <tr>
+      <td>Hamster Booster</td>
+      <td>5</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <td>Insulated</td>
+      <td>100</td>
+      <td>20</td>
+    </tr>
+</table>
+  
+<h2>Buggy specifications: defaults</h2>
+
+<table>
+    <tr>
+      <th>Item</th>
+      <th>Default value</th>
+    </tr>
+    <tr>
+      <td>algo</td>
+      <td>steady</td>
+    </tr>
+    <tr>
+      <td>antibiotic</td>
+      <td>False</td>
+    </tr>
+    <tr>
+      <td>armour</td>
+      <td>none</td>
+    </tr>
+    <tr>
+      <td>attack</td>
+      <td>none</td>
+    </tr>
+    <tr>
+      <td>aux_power_type</td>
+      <td>none</td>
+    </tr>
+    <tr>
+      <td>aux_power_units</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <td>banging</td>
+      <td>False</td>
+    </tr>
+    <tr>
+      <td>fireproof</td>
+      <td>False</td>
+    </tr>
+    <tr>
+      <td>flag_color</td>
+      <td>white</td>
+    </tr>
+    <tr>
+      <td>flag_color_secondary</td>
+      <td>black</td>
+    </tr>
+    <tr>
+      <td>flag_pattern</td>
+      <td>plain</td>
+    </tr>
+    <tr>
+      <td>hamster_booster</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <td>insulated</td>
+      <td>False</td>
+    </tr>
+    <tr>
+      <td>power_type</td>
+      <td>petrol</td>
+    </tr>
+    <tr>
+      <td>power_units</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <td>qty_attacks</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <td>qty_tyres</td>
+      <td>4</td>
+    </tr>
+    <tr>
+      <td>qty_wheels</td>
+      <td>4</td>
+    </tr>
+    <tr>
+      <td>tyres</td>
+      <td>knobbly</td>
+    </tr>
+</table>
+
+<a href="/" class="button">home</a>
+
+
+{% endblock %}

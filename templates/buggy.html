@@ -2,6 +2,34 @@
 
 {% block content %}
 
+<style>
+
+  table {
+    border-collapse: collapse;
+    width: auto;
+    max-width: 100%;
+  }
+
+  tr:nth-child(even) {
+    background-color: #f2f2f2;
+  }
+
+  tr:nth-child(odd) {
+    background-color: #ffffff;
+  }
+
+  tr:hover {
+    background-color: #00d9ff;
+  }
+
+  td{
+    padding: 8px;
+    border: 1px solid #dddddd;
+    text-align: left;
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  }
+</style>
+
   <h1>Buggy</h1>
 
   <table>
@@ -11,10 +39,38 @@
     <tr>
       <td>Wheels:</td> <td> {{ buggy['qty_wheels'] }} </td>
     </tr>
+    <tr>
+      <td>Tyres:</td> <td> {{ buggy['qty_tyres'] }} </td>
+    </tr>
+    <tr>
+      <td>Flag Colour:</td> <td> {{ buggy['flag_color'] }} </td>
+    </tr>
+    <tr>
+      <td>Secondary Flag Color:</td><td> {{ buggy['flag_color_secondary'] }} </td>
+    </tr>
+    <tr>
+      <td>Flag Pattern:</td><td> {{ buggy['flag_pattern'] }} </td>
+    </tr>
+    <tr>
+      <td>Power Type:</td> <td> {{buggy['power_type']}} </td>
+    </tr>
+    <tr>
+      <td>Tyres:</td> <td> {{buggy['tyres']}} </td>
+    </tr>
+    <tr>
+      <td>Armour:</td> <td> {{buggy['armour']}} </td>
+    </tr>
+    <tr>
+      <td>Attack:</td> <td> {{buggy['attack']}} </td>
+    </tr>
+    <tr>
+      <td>Special:</td> <td> {{buggy['special']}} </td>
+    </tr>
+    <tr>
+      <td>Total Cost:</td>  <td> {{ buggy['total_cost'] }}</td>
+    </tr>
   </table>
 
-  <p>
-    <a href="/" class="button">home</a>
-  </p>
+  <a href="/" class="button">home</a>
 
 {% endblock %}

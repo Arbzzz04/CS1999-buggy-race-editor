@@ -2,16 +2,225 @@
 
 {% block content %}
 
-  <h1>Make buggy</h1>
+<style>
+  body {
+    font-family: Arial, sans-serif;
+  }
+  form {
+    margin: 10px;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #8c969e;
+  }
+  label {
+    display: block;
+    margin: 10px;
+    font-weight: bold;
+    color: #ffffff;
+    text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.3);
+  }
+  input[type="text"] {
+    width: 190px;
+    margin: 10px;
+    padding: 5px;
+    border-radius: 3px;
+    border: 1px solid #ccc;
+    display: inline-block;
+    font-size: medium;
+  }
+  .hint {
+    display: none;
+    margin-bottom: 10px;
+    font-weight: bold;
+    color: #ffffff;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+  }
+  .hint-button {
+    display: inline-block;
+    margin: 10px;
+    padding: 10px 20px;
+    background-color: #005a9e;
+    color: #FFFFFF;
+    text-decoration: none;
+    font-family: "Verdana", sans-serif;
+    font-size: 16px;
+    border-radius: 10px;
+    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+  }
+  .hint-button:hover {
+    background-color: #0087c1;
+    color: #FFFFFF;
+  }
+  select {
+    margin: 10px;
+    width: 200px;
+    padding: 5px;
+    border-radius: 3px;
+    border: 1px solid #ccc;
+    display: inline-block;
+  }
+</style>
 
-  <form action="/new" method="post">
-    <label for="qty_wheels">Number of wheels:</label>
-    <input type="text" name="qty_wheels" />
-    <input type="submit" class="button">
-  </form>
+<h1>Make Buggy</h1>
 
-  <p>
-    <a href="/" class="button">home</a>
-  </p>
+<p>Use this form to create your own custom buggy. Customize your buggy just the way you want it!</p>
+
+<p>For further information on the buggy components and their costs, visit: <a href="/info">Buggy Parts Info</a></p>
+
+<form action="/new" method="post">
+  <p>Each of these fields are components for your buggy. Make sure to fill out each field correctly and to your liking.</p>
+
+  <label for="qty_wheels">Number of Wheels:</label>
+  <input type="text" id="qty_wheels" name="qty_wheels" value="{{ qty_wheels }}"/>
+  <button type="button" class="hint-button">Hint</button>
+  <span class="hint">Enter the number of wheels for the buggy.</span>
+  {% if qty_wheels_warning %}
+    <div class="warning">{{ qty_wheels_warning }}</div>
+  {% endif %}
+
+  <label for="qty_tyres">Number of Tyres:</label>
+  <input type="text" id="qty_tyres" name="qty_tyres" value="{{ qty_tyres }}"/>
+  <button type="button" class="hint-button">Hint</button>
+  <span class="hint">Enter the number of tyres for the buggy. Must be more than the number of wheels.</span>
+  {% if qty_tyres_warning %}
+    <div class="warning">{{ qty_tyres_warning }}</div>
+  {% endif %}
+
+  <label for="flag_color">Flag Colour:</label>
+  <input type="text" id="flag_color" name="flag_color" value="{{ flag_color }}"/>
+  <button type="button" class="hint-button">Hint</button>
+  <span class="hint">Enter a color for the buggy's flag.</span>
+  {% if flag_color_warning %}
+    <div class="warning">{{ flag_color_warning }}</div>
+  {% endif %}
+
+  <label for="flag_color_secondary">Flag Secondary Colour:</label>
+  <input type="text" id="flag_color_secondary" name="flag_color_secondary" value="{{ flag_color_secondary}}"/>
+  <button type="button" class="hint-button">Hint</button>
+  <span class="hint">Enter a secondary color for the buggy's flag.</span>
+  {% if flag_color_warning %}
+    <div class="warning">{{ flag_color_warning }}</div>
+  {% endif %}
+
+  <label for="flag_pattern">Flag Pattern:</label>
+  <select id="flag_pattern" name="flag_pattern" value="flag_pattern">
+    <option hidden value="NA">Flag Pattern</option>
+    <option value="checkered">Checkered</option>
+    <option value="jollyroger">Jolly Roger</option>
+    <option value="plain">Plain</option>
+    <option value="spots">Spots</option>
+    <option value="stripes">Stripes</option>
+    <option value="unionjack">Union Jack</option>
+  </select>
+  {% if color_combo_warning %}
+    <div class="warning">{{ color_combo_warning }}</div>
+  {% endif %}
+  {% if flag_pattern_warning %}
+    <div class="warning">{{ flag_pattern_warning }}</div>
+  {% endif %}
+  
+  <label for="power_type">Power Type:</label>
+  <select id="power_type" name="power_type" value="power_type">
+    <option hidden value="NA">Power Type - Cost</option>
+    <option value="bio">Bio - 5</option>
+    <option value="electric">Electric - 20</option>
+    <option value="fusion">Fusion - 400</option>
+    <option value="hamster">Hamster - 3</option>
+    <option value="none">None - 0</option>
+    <option value="petrol">Petrol - 4</option>
+    <option value="rocket">Rocket - 16</option>
+    <option value="solar">Solar - 40</option>
+    <option value="steam">Steam - 3</option>
+    <option value="thermo">Thermo - 300</option>
+    <option value="wind">Wind - 20</option>
+  </select>
+  {% if power_type_warning %}
+    <div class="warning">{{ power_type_warning }}</div>
+  {% endif %}
+
+  <label for="tyres">Tyres:</label>
+  <select id="tyres" name="tyres" value="tyres">
+    <option hidden value="NA">Tyres - Cost</option>
+    <option value="knobbly">Knobbly - 15</option>
+    <option value="maglev">Maglev - 50</option>
+    <option value="reactive">Reactive - 40</option>
+    <option value="slick">Slick - 10</option>
+    <option value="steelband">Steelband - 20</option>
+  </select>
+  {% if tyres_warning %}
+    <div class="warning">{{ tyres_warning }}</div>
+  {% endif %}
+
+  <label for="armour">Armour:</label>
+  <select id="armour" name="armour" value="armour">
+    <option hidden value="NA">Armour - Cost</option>
+    <option value="aluminium">Aluminium - 200</option>
+    <option value="none">None - 0</option>
+    <option value="thicksteel">Thicksteel - 200</option>
+    <option value="thinsteel">Thinsteel - 100</option>
+    <option value="titanium">Titanium - 290</option>
+    <option value="wood">Wood - 40</option>
+  </select>
+  {% if armour_warning %}
+    <div class="warning">{{ armour_warning }}</div>
+  {% endif %}
+
+  <label for="attack">Attack:</label>
+  <select id="attack" name="attack" value="attack">
+    <option hidden value="NA">Attack - Cost</option>
+    <option value="biohazard">Biohazard - 30</option>
+    <option value="charge">Charge - 28</option>
+    <option value="flame">Flame - 20</option>
+    <option value="none">None - 0</option>
+    <option value="spike">Spike - 5</option>
+  </select>
+  {% if attack_warning %}
+    <div class="warning">{{ attack_warning }}</div>
+  {% endif %}
+
+  <label for="algo">Algo:</label>
+  <select id="algo" name="algo" value="algo">
+    <option hidden value="NA">Algo</option>
+    <option value="buggy">Buggy</option>
+    <option value="defensive">Defensive</option>
+    <option value="offensive">Offensive</option>
+    <option value="random">Random</option>
+    <option value="steady">Steady</option>
+    <option value="titfortat">Titfortat</option>
+  </select>
+  {% if algo_warning %}
+    <div class="warning">{{ algo_warning }}</div>
+  {% endif %}
+
+  <label for="special">Special:</label>
+  <select id="special" name="special" value="special">
+    <option hidden value="NA">Special - Cost</option>
+    <option value="antibiotic">Antibiotic - 90</option>
+    <option value="banging">Banging - 42</option>
+    <option value="fireproof">Fireproof - 70</option>
+    <option value="hamster booster">Hamster Booster - 5</option>
+    <option value="insulated">Insulated - 100</option>
+  </select>
+  {% if special_warning %}
+    <div class="warning">{{ special_warning }}</div>
+  {% endif %}
+  
+  <input type="submit" class="submit" value="Submit">
+
+</form>
+
+<a href="/" class="button">Home</a>
+
+<script>
+  const hintButtons = document.querySelectorAll('.hint-button');
+  hintButtons.forEach((button) => {
+    const hint = button.nextElementSibling;
+    button.addEventListener('click', () => {
+      hint.style.display = hint.style.display === 'none' ? 'inline' : 'none'; // Toggle the hint visibility
+    });
+  });
+</script>
+
 
 {% endblock %}

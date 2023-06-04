@@ -2,16 +2,23 @@
 
 {% block content %}
 
-  <h1>
-    Arbaaz's buggy editor
-  </h1>
+<style>
+  .index_content {
+    text-align: center;
+  }
+</style>
+
+<body class="index_title">
+  <h1>Arbaaz's Buggy Editor</h1>
 
   <div class="spacer">
-    <a href="/new" class="button">Make buggy</a>
-    <a href="/buggy" class="button">Show buggy</a>
-    <a href="/json" class="button">Get buggy JSON</a>
+    <a href="/new" class="button">Make Buggy</a>
+    <a href="/buggy" class="button">Show Buggy</a>
+    <a href="/json" class="button">Get Buggy JSON</a>
+    <a href="/info" class="button">Buggy Parts Info</a>
   </div>
 
+  <div class="index_content">
   <p>
     Use this editor to specify a racing buggy. The editor saves it in its
     little database and generates JSON data for the buggy. This is the data you
@@ -24,5 +31,6 @@
     will be disqualified from that race... so make sure you program your editor
     correctly.
   </p>
-
+  </div>
+</body>
 {% endblock %}
