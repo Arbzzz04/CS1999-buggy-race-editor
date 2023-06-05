@@ -1,6 +1,7 @@
 import sqlite3
+import os
 
-DATABASE_FILE = "database.db"
+DATABASE_FILE = os.environ.get('DATABASE_FILE', 'database.db')
 
 #-----------------------------------------------------------------------------
 # This script initialises your SQLite database for you, just to get you
@@ -32,7 +33,8 @@ connection.execute("""
     armour                VARCHAR(20) DEFAULT "none",
     attack                VARCHAR(20) DEFAULT "none",
     algo                  VARCHAR(20) DEFAULT "steady",
-    special               VARCHAR(20) ,          
+    special               VARCHAR(20),
+    qty_hamster_booster   INTEGER DEFAULT 0,          
     total_cost            INTEGER DEFAULT 0
   )
 

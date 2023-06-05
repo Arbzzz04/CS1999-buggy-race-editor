@@ -1,12 +1,14 @@
 from flask import Flask, render_template, request, jsonify
 import os
 import sqlite3 as sql
+from dotenv import load_dotenv
+load_dotenv()
 
 # app - The flask application where all the magical things are configured.
 app = Flask(__name__)
 
 # Constants - Stuff that we need to know that won't ever change!
-DATABASE_FILE = "database.db"
+DATABASE_FILE = os.environ.get('DATABASE_FILE', 'database.db')
 DEFAULT_BUGGY_ID = "1"
 BUGGY_RACE_SERVER_URL = "https://rhul.buggyrace.net"
 
@@ -27,21 +29,14 @@ def create_buggy():
     if request.method == 'GET':
         with sql.connect(DATABASE_FILE) as con:
             cur = con.cursor()
-            cur.execute("SELECT qty_wheels, flag_color, flag_color_secondary, flag_pattern, power_type, tyres, armour, attack, algo, special, qty_tyres FROM buggies WHERE id=?", (DEFAULT_BUGGY_ID,))
+            cur.execute("SELECT qty_wheels, flag_color, flag_color_secondary,qty_tyres FROM buggies WHERE id=?", (DEFAULT_BUGGY_ID,))
             result = cur.fetchone()
             if result:
                 qty_wheels = result[0]
                 flag_color = result[1]
                 flag_color_secondary = result[2]
-                flag_pattern = result[3]
-                power_type = result[4]
-                tyres = result[5]
-                armour = result[6]
-                attack = result[7]
-                algo = result[8]
-                special = result[9]
-                qty_tyres = result[10]
-                return render_template("buggy-form.html", qty_wheels=qty_wheels, flag_color=flag_color, flag_color_secondary=flag_color_secondary, flag_pattern=flag_pattern, power_type=power_type, tyres=tyres, armour=armour, attack=attack, algo=algo, special=special, qty_tyres=qty_tyres)
+                qty_tyres = result[3]
+                return render_template("buggy-form.html", qty_wheels=qty_wheels, flag_color=flag_color, flag_color_secondary=flag_color_secondary, qty_tyres=qty_tyres)
             else:
                 return render_template("buggy-form.html")
     elif request.method == 'POST':
