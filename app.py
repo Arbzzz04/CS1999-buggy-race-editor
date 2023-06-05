@@ -163,7 +163,7 @@ def edit_buggy():
     return render_template("buggy-form.html")
 # You probably don't need to edit this... unless you want to ;)
 #
-# get JSON from current record
+#  get JSON from current record
 #  This reads the buggy record from the database, turns it
 #  into JSON format (excluding any empty values), and returns
 #  it. There's no .html template here because it's *only* returning
