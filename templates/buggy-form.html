@@ -206,6 +206,10 @@
     <div class="warning">{{ special_warning }}</div>
   {% endif %}
   
+  <br>
+
+  <input type="button" class="submit" value="Autofill" onclick="autofillValues()" />
+
   <input type="submit" class="submit" value="Submit">
 
 </form>
@@ -213,6 +217,7 @@
 <a href="/" class="button">Home</a>
 
 <script>
+
   const hintButtons = document.querySelectorAll('.hint-button');
   hintButtons.forEach((button) => {
     const hint = button.nextElementSibling;
@@ -220,6 +225,21 @@
       hint.style.display = hint.style.display === 'none' ? 'inline' : 'none'; // Toggle the hint visibility
     });
   });
+
+  function autofillValues() {
+    document.getElementById("qty_wheels").value = "4";
+    document.getElementById("qty_tyres").value = "6";
+    document.getElementById("flag_color").value = "red";
+    document.getElementById("flag_color_secondary").value = "blue";
+    document.getElementById("flag_pattern").value = "plain";
+    document.getElementById("power_type").value = "fusion";
+    document.getElementById("tyres").value = "reactive";
+    document.getElementById("armour").value = "titanium";
+    document.getElementById("attack").value = "charge";
+    document.getElementById("algo").value = "steady";
+    document.getElementById("special").value = "insulated";
+  }
+
 </script>
 
 

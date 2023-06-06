@@ -2,6 +2,7 @@ from flask import Flask, render_template, request, jsonify
 import os
 import sqlite3 as sql
 from dotenv import load_dotenv
+
 load_dotenv()
 
 # app - The flask application where all the magical things are configured.
