@@ -122,6 +122,7 @@ def create_buggy():
             qty_tyres = int(qty_tyres)
             flag_color = flag_color.upper()
             flag_color_secondary = flag_color_secondary.upper()
+            total_cost = round(total_cost, 2)
             with sql.connect(DATABASE_FILE) as con:
                 cur = con.cursor()
                 cur.execute(
