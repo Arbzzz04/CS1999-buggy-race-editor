@@ -10,10 +10,10 @@ body {
   color: #000000;
   background: repeating-linear-gradient(
     45deg,
-    #000000,
+    #005a9e,
     #000000 2em,
-    #FFFF00 2em,
-    #FFFF00 4em
+    #000000 2em,
+    #0079d5 4em
   );
 }
 .main-content {
@@ -28,7 +28,7 @@ h1 {
   color: #005a9e;
   text-align: center;
   font-family: "Arial", sans-serif;
-  font-size: 40px;
+  font-size: 55px;
   margin-top: 20px;
   position: relative;
   cursor: pointer;

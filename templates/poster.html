@@ -4,49 +4,117 @@
 <style>
 .poster-tasks {
   border-top: 1px solid black;
-  margin-top: 4em;
 }
+
 .poster-tasks .task {
   margin: 1em;
   padding: 1em;
   border: 1px solid black;
+  border-radius: 3px;
+  text-align: center;
 }
+
 .poster-tasks .task h2 {
   border-bottom: 3px solid gray;
 }
+
+h2 {
+  text-align: center;
+}
+
 </style>
 
-<!-- Anything you want here: make it beautiful! make it appealing! make it clear! -->
-<!-- you can drop images into static/assets if you want... and access them        -->
-<!-- here with <img src="/static/image-filename.png" alt="diagram" />             -->
-<!--                                                                              -->
-<!-- Of course you can edit static/app.css too if you want...                     -->
-<!-- It's your webserver, after all.                                              -->
-<!--                                                                              -->
-<!-- Maybe... delete all these comments too :-)                                   -->
-
-
-<!-- below this point keep this section tag and paste in a <div> for every        -->
-<!-- task you attempted.                                                          -->
+<h1>Poster</h1>
 
 <section class="poster-tasks">
 
-<div class="task">
-  <h2>0-GET Get the source code</h2>
-  <p>
-    I forked the repo on GitHub and then used <code>git clone</code> to make
-    a local copy.
-  </p>
-  <p>
-    Once the repo was on my own machine I was able to commit changes to
-    version control as I went along, and I pushed back up to my GitHub repo
-    at the end of each day. I followed GitHub's instructions and set up a
-    SSH key so I didn't need to enter username and password every time I
-    pushed.
-  </p>
-</div>
+  <div class="task">
+    <h2>0-GET: Get the source code</h2>
+    <p>
+      I forked the repository on GitHub and then used <code>git clone</code> to make a local copy.
+    </p>
+    <p>
+      Once the repository was on my own machine, I was able to commit changes to version control as I went along and pushed them to my GitHub repository at the end of each day. I followed GitHub's instructions and set up an SSH key, so I didn't need to enter a username and password every time I pushed.
+    </p>
+  </div>
 
-<!-- this closes the section: keep it in! -->
+  <div class="task">
+    <h2>0-RUN: Get the app running and view it in a browser</h2>
+    <p>
+      After connecting to the workspace and entering my password, I was able to run the app.py file and view the webpage in a browser.
+    </p>
+  </div>
+
+  <div class="task">
+    <h2>0-CHANGE: Make a change to a template and see it appear</h2>
+    <p>
+      I edited the title of the index.html web page to "Arbaaz's buggy editor," then refreshed the page and saw the change occur.
+    </p>
+  </div>
+
+  <div class="task">
+    <h2>1-TEMPLATE: Add a new template to the app</h2>
+    <p>
+      I created an HTML file called "info" and copied the specifications from the buggy race server to my app. I hard-coded the tables and added CSS to style them.
+    </p>
+  </div>
+
+  <div class="task">
+    <h2>1-ADD: Add more data to the form</h2>
+    <p>
+      I added a "flag_color" variable to be filled when creating a buggy and submitted it to the database in the app.py file.
+    </p>
+  </div>
+
+  <div class="task">
+    <h2>1-VALID: Add basic data validation</h2>
+    <p>
+      I edited the app.py file and used the "isdigit()" method to verify that the input was a number. Then, I displayed an error message alongside the input box to show the field that was not entered correctly.
+    </p>
+  </div>
+
+  <div class="task">
+    <h2>1-STYLE: Style your editor just how you like it</h2>
+    <p>
+      I added CSS styling to the main file called "app.css." I added features like changing the button color when hovering over it.
+    </p>
+  </div>
+
+  <div class="task">
+    <h2>2-EDIT: Edit the record by loading its current values into the form</h2>
+    <p>
+      I edited the app.py file with the function "create_buggy()" and changed the "get" method to retrieve the data for the required fields. Then, I returned the values to be displayed in the web page and modified the HTML to populate the input boxes with the retrieved values.
+    </p>
+  </div>
+
+  <div class="task">
+    <h2>2-FORM: Make the form better</h2>
+    <p>
+      I added a "hint" button next to the input field to provide a description and guide the user if the label was unclear. I used JavaScript to toggle the visibility of the description when the button is clicked.
+    </p>
+  </div>
+
+  <div class="task">
+    <h2>2-COST: Calculate and save the game cost of the buggy</h2>
+    <p>
+      I added variables to the "init_db" file and created a new "database.db" file to store the new variable in the database. Then, I retrieved the inputs from the buggy form, used Python to calculate the costs, and updated the values for all the components, including the total cost, in the database.
+    </p>
+  </div>
+
+  <div class="task">
+    <h2>3-ENV: Switch between dev and production environments</h2>
+    <p>
+      I used the "python-dotenv" library in the app.py file and created a ".env" file to store the necessary information. I modified the program to switch between the development and production environments by editing the values in the ".env" file.
+    </p>
+  </div>
+
+  <div class="task">
+    <h2>3-AUTOFILL: Add auto-fill to the edit forms</h2>
+    <p>
+      I added a JavaScript function within the script tags to enable the user to autofill the remaining elements. By calling the "autofillValues()" function, predefined values were populated in the form fields.
+    </p>
+  </div>
+
 </section>
 
 {% endblock %}
