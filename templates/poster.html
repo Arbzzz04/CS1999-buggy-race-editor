@@ -6,7 +6,7 @@
   border-top: 1px solid black;
 }
 
-.poster-tasks .task {
+.task {
   margin: 1em;
   padding: 1em;
   border: 1px solid black;
@@ -18,13 +18,63 @@
   border-bottom: 3px solid gray;
 }
 
+.header_content {
+  text-align: center;
+}
+
 h2 {
   text-align: center;
 }
 
+#header {
+    background-color: #333;
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+    }
+
+#features {
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 20px;
+    border: 1px solid #000000;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    }
+
+#features h3 {
+    text-align: center;
+    }
+
+#content {
+    text-align: center;
+    font-size: 20px;
+    }
 </style>
 
 <h1>Poster</h1>
+<div class="header_content">
+    <p>A powerful web application for designing and customizing racing buggies</p>
+</div>
+
+<div id="features">
+    <h1>Features</h1>
+    <h3>Intuitive Interface</h3>
+    <p>Easily navigate through various buggy components and customize their properties using a user-friendly interface.</p>
+
+    <h3>Component Library</h3>
+    <p>Access a vast library of pre-designed components such as wheels, chassis, engines, and more, to build your ideal racing buggy.</p>
+
+    <h3>Customization</h3>
+    <p>Customize the properties of each component, such as size, color, and material, to create a unique design.</p>
+
+    <h3>Ease of Use</h3>
+    <p>Use the drag-and-drop feature to easily add and remove components from your buggy design. As well as the autofill feature to quickly fill in the properties of each component.</p>
+
+    <h3>Export and Share</h3>
+    <p>Export your finalized buggy design as a downloadable file or share it with others, enabling collaboration and showcasing your creativity.</p>
+</div>
+
 
 <section class="poster-tasks">
 
@@ -102,6 +152,13 @@ h2 {
   </div>
 
   <div class="task">
+    <h2>2-RULES: Add validation according to the game rules</h2>
+  
+    <p>I have added some validation so far like checking for even numbers and checking if the colors are the same for the flag if the pattern is not plain. I also had to add the data fields to the form to allow the user to choose and warning to prompt the user to pick again. i had to add validation for the rest of the variables that i added too and configured them to match the rules of the game.</p>
+  
+</div>
+
+  <div class="task">
     <h2>3-ENV: Switch between dev and production environments</h2>
     <p>
       I used the "python-dotenv" library in the app.py file and created a ".env" file to store the necessary information. I modified the program to switch between the development and production environments by editing the values in the ".env" file.
@@ -116,5 +173,7 @@ h2 {
   </div>
 
 </section>
+
+<a href="/" class="button">home</a>
 
 {% endblock %}
