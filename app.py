@@ -183,6 +183,14 @@ def summary():
 def get_info():
     return render_template("info.html")
 
+#------------------------------------------------------------
+# a page leadiong to the poster for my buggy
+#------------------------------------------------------------
+
+@app.route('/poster')
+def poster():
+    return render_template('poster.html')
+
 # You shouldn't need to add anything below this!
 if __name__ == '__main__':
     alloc_port = os.environ.get('CS1999_PORT') or 5000
